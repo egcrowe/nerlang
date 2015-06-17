@@ -436,7 +436,7 @@ beam_cold.h beam_hot.h beam_opcodes.c beam_opcodes.h beam_pred_funcs.h \
 
 erl_version.h:
 	$(AM_V_GEN)$(PERL) $(srcdir)/tools/make_version -o $@ \
-	 17 $(PACKAGE_VERSION) $(OTP_VERSION) $(host)
+	 $(PACKAGE_VERSION) $(PACKAGE_VERSION) $(PACKAGE_VERSION) $(host)
 
 driver_tab.c:
 	$(AM_V_GEN)$(PERL) $(srcdir)/tools/make_driver_tab -o $@ -nifs \

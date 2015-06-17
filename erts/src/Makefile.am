@@ -13,18 +13,18 @@ bin_PROGRAMS = \
  ct_run \
  dialyzer \
  epmd \
- erlc \
+ nerlc \
  escript \
- run_erl \
- to_erl \
+ run_nerl \
+ to_nerl \
  typer
 
 erlangbindir = $(prefix)/lib/erlang/bin
 
 erlangbin_PROGRAMS = \
  child_setup \
- dyn_erl \
- erlexec \
+ dyn_nerl \
+ nerlexec \
  heart \
  inet_gethost
 
@@ -36,7 +36,7 @@ ct_run_SOURCES = ct_run.c
 
 dialyzer_SOURCES = dialyzer.c
 
-dyn_erl_SOURCES = dyn_erl.c
+dyn_nerl_SOURCES = dyn_erl.c
 
 epmd_SOURCES = \
  epmd.c \
@@ -47,11 +47,11 @@ epmd_SOURCES = \
 
 epmd_CPPFLAGS = $(AM_CPPFLAGS) -DEPMD_PORT_NO=4369
 
-erlc_SOURCES = erlc.c
+nerlc_SOURCES = erlc.c
 
-erlexec_SOURCES = erlexec.c
+nerlexec_SOURCES = erlexec.c
 
-erlexec_CPPFLAGS = $(AM_CPPFLAGS) -DOTP_SYSTEM_VERSION=\"17\"
+nerlexec_CPPFLAGS = $(AM_CPPFLAGS) -DOTP_SYSTEM_VERSION=\"17\"
 
 escript_SOURCES = escript.c
 
@@ -59,7 +59,7 @@ heart_SOURCES = heart.c
 
 inet_gethost_SOURCES = inet_gethost.c
 
-run_erl_SOURCES = \
+run_nerl_SOURCES = \
  run_erl.c \
  run_erl_common.c \
  run_erl_common.h \
@@ -67,7 +67,7 @@ run_erl_SOURCES = \
  safe_string.c \
  safe_string.h
 
-to_erl_SOURCES = \
+to_nerl_SOURCES = \
  to_erl.c \
  to_erl_common.c \
  to_erl_common.h \

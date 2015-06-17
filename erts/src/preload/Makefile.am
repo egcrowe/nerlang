@@ -20,7 +20,11 @@ am__v_APP_0 = @echo "  APP     " $@;
 am__v_APP_1 =
 
 headers = \
- zip_internal.hrl
+ zip_internal.hrl \
+ file.hrl \
+ inet_boot.hrl \
+ inet_int.hrl \
+ inet_sctp.hrl
 
 sources = \
  erlang.erl \
@@ -43,6 +47,7 @@ erts_srcdir = $(prefix)/lib/erlang/erts/src
 
 erts_src_DATA = \
  erts.app.src \
+ add_abstract_code \
  $(headers) \
  $(sources)
 
@@ -75,10 +80,10 @@ clean-local:
 sinclude $(deps)
 
 .app.src.app:
-	$(AM_V_APP)$(SED) -e 's;%VSN%;$(OTP_VERSION);' $< > $@
+	$(AM_V_APP)$(SED) -e 's;%VSN%;$(PACKAGE_VERSION);' $< > $@
 
 .appup.src.appup:
-	$(AM_V_APP)$(SED) -e 's;%VSN%;$(OTP_VERSION);' $< > $@
+	$(AM_V_APP)$(SED) -e 's;%VSN%;$(PACKAGE_VERSION);' $< > $@
 
 prim_eval.abstr: prim_eval.erl
 	$(AM_V_ERLC)$(ERLC) $(ERLCFLAGS) -o. +dabstr $<

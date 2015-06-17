@@ -16,7 +16,7 @@ am__v_APP_1 =
 
 EINC = -I$(top_srcdir)/lib -I$(srcdir) -I$(srcdir)/../include
 
-ERLCFLAGS += -DCOMPILER_VSN=\'$(OTP_VERSION)\'
+ERLCFLAGS += -DCOMPILER_VSN=\'$(PACKAGE_VERSION)\'
 
 headers = \
  beam_disasm.hrl \
@@ -113,7 +113,7 @@ clean-local:
 sinclude $(deps)
 
 .app.src.app:
-	$(AM_V_APP)$(SED) -e 's;%VSN%;$(OTP_VERSION);' $< > $@
+	$(AM_V_APP)$(SED) -e 's;%VSN%;$(PACKAGE_VERSION);' $< > $@
 
 .appup.src.appup:
-	$(AM_V_APP)$(SED) -e 's;%VSN%;$(OTP_VERSION);' $< > $@
+	$(AM_V_APP)$(SED) -e 's;%VSN%;$(PACKAGE_VERSION);' $< > $@

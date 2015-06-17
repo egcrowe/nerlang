@@ -1,5 +1,7 @@
 AC_PREREQ([2.69])
-AC_INIT([nerlang], [0.1], [graham.crowe@ericsson.com])
+AC_INIT([nerlang],
+  m4_esyscmd([git describe --tags --always 2>/dev/null | tr -d '\n']),
+  [graham.crowe@ericsson.com])
 AC_CONFIG_AUX_DIR(build-aux)
 AC_CONFIG_MACRO_DIR([m4])
 AC_CONFIG_SRCDIR([erts/src/beam/erl_term.c])
@@ -3794,17 +3796,6 @@ LDFLAGS="$LDFLAGS $sanitizers"
 ])
 
 dnl ----------------------------------------------------------------------
-dnl Set OTP version
-dnl ----------------------------------------------------------------------
-
-OTP_VERSION=`git describe --tags --always 2>/dev/null`
-if test "$OTP_VERSION" = "";
-  then OTP_VERSION=`cat $srcdir/OTP_VERSION`
-  else echo $OTP_VERSION>$srcdir/OTP_VERSION
-fi
-AC_SUBST(OTP_VERSION)
-
-dnl ----------------------------------------------------------------------
 dnl Set ROOTDIR
 dnl ----------------------------------------------------------------------
 
@@ -3852,14 +3843,14 @@ AC_CONFIG_FILES([
  bin/Makefile
 ])
 
-AC_CONFIG_FILES([bin/erl], [chmod +x bin/erl])
+AC_CONFIG_FILES([bin/nerl], [chmod +x bin/nerl])
 
 AC_OUTPUT
 
 echo \
 "------------------------------------------------------------
 
-Distribution : ${PACKAGE_TARNAME}-${OTP_VERSION}.tar.gz
+Distribution : ${PACKAGE_TARNAME}-${PACKAGE_VERSION}.tar.gz
 Prefix       : ${prefix}
 Compiler     : ${CC}
 CFLAGS       : ${CFLAGS}

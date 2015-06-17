@@ -1,5 +1,25 @@
+Introduction
+------------
+This is nerlang (Nano-Erlang), a minimal erlang distribution with refined
+libraries adhering to a strict dependency hierarchy.
+
 Build Instructions
 ------------------
+The environment must have an installed version of erlang-otp in order to
+bootstrap compile the erlang sources. This has been successfully tested with
+OTP-17.3.2 and found to not work with OTP-18.0-rc2 (compilation of yacc source
+erl_parse.erl fails). The following is guide for compiling and installing
+OTP-17.3.2 for use with the subsequent steps without polluting in existing
+erlang-otp installation (with N set to the number of available CPU cores):
+
+    > cd path/to/erlang/otp/git/repo
+    > git checkout OTP-17.3.2
+    > ./otp_build autoconf
+    > ./configure --prefix=$HOME/temp
+    > make -s -jN
+    > make install
+    > export PATH=$HOME/temp/bin:$PATH
+
 If the git source repository has been cloned then your environment must support
 the GNU Build System "Autotools" (GNU Autoconf, GNU Automake and GNU Libtool).
 After cloning the repository generate the configure script and Makefile.ins with

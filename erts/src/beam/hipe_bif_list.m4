@@ -280,11 +280,11 @@ ifelse($1,list_to_bitstring_1,hipe_wrapper_list_to_bitstring_1,
 $1)))))))))))')
 
 define(BIF_LIST,`standard_bif_interface_$3(nbif_$4, CFUN($4))')
-include(TARGET/`erl_bif_list.h')
+include(`erl_bif_list.h')
 
 /*
  * Guard BIFs.
  * GBIF_LIST(FunctionAtom,Arity,CFun)
  */
 define(GBIF_LIST,`nofail_primop_interface_$2(gbif_$3, $3)')
-include(`hipe/hipe_gbif_list.h')
+include(`hipe_gbif_list.h')

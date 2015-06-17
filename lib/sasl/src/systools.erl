@@ -36,7 +36,7 @@
 	 make_tar/1, make_tar/2,
 	 make_relup/3, make_relup/4]).
 
--include("erl_compile.hrl").
+-include_lib("stdlib/include/erl_compile.hrl").
 
 %%% The behaviour_info functions have been moved to erl_internal in stdlib.
 

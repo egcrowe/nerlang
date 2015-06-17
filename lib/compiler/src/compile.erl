@@ -31,7 +31,7 @@
 
 -export_type([option/0]).
 
--include("erl_compile.hrl").
+-include_lib("stdlib/include/erl_compile.hrl").
 -include("core_parse.hrl").
 
 -import(lists, [member/2,reverse/1,reverse/2,keyfind/3,last/1,

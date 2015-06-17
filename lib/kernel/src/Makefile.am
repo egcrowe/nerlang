@@ -24,7 +24,6 @@ headers = \
  inet_int.hrl \
  disk_log.hrl \
  hipe_ext_format.hrl \
- beam_disasm.hrl \
  hipe.hrl \
  erl_epmd.hrl \
  inet_dns.hrl \
@@ -140,7 +139,7 @@ clean-local:
 sinclude $(deps)
 
 .app.src.app:
-	$(AM_V_APP)$(SED) -e 's;%VSN%;$(OTP_VERSION);' $< > $@
+	$(AM_V_APP)$(SED) -e 's;%VSN%;$(PACKAGE_VERSION);' $< > $@
 
 .appup.src.appup:
-	$(AM_V_APP)$(SED) -e 's;%VSN%;$(OTP_VERSION);' $< > $@
+	$(AM_V_APP)$(SED) -e 's;%VSN%;$(PACKAGE_VERSION);' $< > $@

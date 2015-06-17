@@ -4,14 +4,12 @@ SUBDIRS = erts lib bin
 
 check_SCRIPTS = hello.sh
 
-EXTRA_DIST = OTP_VERSION
-
-distdir = $(PACKAGE_TARNAME)-$(OTP_VERSION)
+distdir = $(PACKAGE_TARNAME)-$(PACKAGE_VERSION)
 
 TESTS = hello.sh
 
-hello.sh: $(builddir)/erl
-	echo '$(builddir)/erl -noshell \
+hello.sh: $(builddir)/nerl
+	echo '$(builddir)/nerl -noshell \
 	 -boot $(srcdir)/bin/start \
 	 -pa $(builddir)/lib/kernel/ebin \
 	 -pa $(builddir)/lib/stdlib/ebin \
@@ -21,8 +19,8 @@ hello.sh: $(builddir)/erl
 	 -s init stop | grep "Hello World"' > $@
 	chmod +x $@
 
-$(builddir)/erl: $(builddir)/bin/erl
+$(builddir)/nerl: $(builddir)/bin/nerl
 	$(SED) -e 's;@BINDIR@;$(abspath $(builddir)/erts/src);' $< > $@
 	$(CHMOD) +x $@
 
-CLEANFILES = $(TESTS) $(builddir)/erl
+CLEANFILES = $(TESTS) $(builddir)/nerl

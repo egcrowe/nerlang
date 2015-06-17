@@ -19,7 +19,7 @@
 -module(erl_compile).
 
 -include("erl_compile.hrl").
--include("file.hrl").
+-include_lib("kernel/include/file.hrl").
 
 -export([compile_cmdline/0]).
 

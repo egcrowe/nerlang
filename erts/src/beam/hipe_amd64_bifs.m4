@@ -19,7 +19,7 @@ changecom(`/*', `*/')dnl
  */
 
 
-include(`hipe/hipe_amd64_asm.m4')
+include(`hipe_amd64_asm.m4')
 #`include' "config.h"
 #`include' "hipe_literals.h"
 
@@ -569,7 +569,7 @@ define(gc_bif_interface_2,`standard_bif_interface_2($1, $2)')
  */
 define(gc_nofail_primop_interface_1,`nofail_primop_interface_1($1, $2)')
 
-include(`hipe/hipe_bif_list.m4')
+include(`hipe_bif_list.m4')
 
 `#if defined(__linux__) && defined(__ELF__)
 .section .note.GNU-stack,"",%progbits

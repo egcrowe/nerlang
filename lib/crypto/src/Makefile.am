@@ -16,7 +16,7 @@ am__v_APP_1 =
 
 EINC = -I$(top_srcdir)/lib -I$(srcdir)/../include
 
-ERLCFLAGS += -DCRYPTO_VSN=\'$(OTP_VERSION)\'
+ERLCFLAGS += -DCRYPTO_VSN=\'$(PACKAGE_VERSION)\'
 
 sources = \
  crypto_ec_curves.erl \
@@ -63,7 +63,7 @@ clean-local:
 sinclude $(deps)
 
 .app.src.app:
-	$(AM_V_APP)$(SED) -e 's;%VSN%;$(OTP_VERSION);' $< > $@
+	$(AM_V_APP)$(SED) -e 's;%VSN%;$(PACKAGE_VERSION);' $< > $@
 
 .appup.src.appup:
-	$(AM_V_APP)$(SED) -e 's;%VSN%;$(OTP_VERSION);' $< > $@
+	$(AM_V_APP)$(SED) -e 's;%VSN%;$(PACKAGE_VERSION);' $< > $@

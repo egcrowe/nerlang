@@ -13,7 +13,7 @@ value_of(Token) ->
 line_of(Token) ->
     element(2, Token).
 
--file("/clearcase/otp/erts/lib/parsetools/include/yeccpre.hrl", 0).
+-file("../include/yeccpre.hrl", 0).
 %%
 %% %CopyrightBegin%
 %%

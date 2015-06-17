@@ -52,7 +52,7 @@
 -define(DO_ASSERT,true).
 -define(HIPE_LOGGING,true).
 
--include("../../hipe/main/hipe.hrl").
+-include("hipe.hrl").
 -include("hipe_ext_format.hrl").
 
 %% Currently, there is no need to expose these to the outside world.

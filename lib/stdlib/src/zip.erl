@@ -43,7 +43,7 @@
 -export([zip_get_state/1]).
 
 %% includes
--include("file.hrl").		 % #file_info
+-include_lib("kernel/include/file.hrl").		 % #file_info
 -include("zip.hrl").	         % #zip_file, #zip_comment
 
 %% max bytes fed to zlib

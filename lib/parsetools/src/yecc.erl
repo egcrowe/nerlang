@@ -33,8 +33,8 @@
                 keysort/2, last/1, map/2, member/2, reverse/1,
                 sort/1, usort/1]).
 
--include("erl_compile.hrl").
--include("ms_transform.hrl").
+-include_lib("stdlib/include/erl_compile.hrl").
+-include_lib("stdlib/include/ms_transform.hrl").
 
 -record(yecc, {
           infile,

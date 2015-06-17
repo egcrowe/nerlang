@@ -31,7 +31,7 @@
 -import(ordsets, [from_list/1,union/2]).
 -import(lists,   [member/2,foldl/3,foldr/3]).
 
--include("../include/erl_bits.hrl").
+-include_lib("stdlib/include/erl_bits.hrl").
 
 -record(expand, {module=[],                     %Module name
                  exports=[],                    %Exports

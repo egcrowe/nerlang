@@ -1,5 +1,5 @@
 bin_SCRIPTS = \
- erl
+ nerl
 
 rootdir = $(prefix)/lib/erlang
 erlangbindir = $(rootdir)/bin
@@ -10,7 +10,7 @@ erlangbin_SCRIPTS = \
 
 EXTRA_DIST = start.boot start.script
 
-install-exec-hook: $(DESTDIR)$(bindir)/erl
+install-exec-hook: $(DESTDIR)$(bindir)/nerl
 	$(SED) -i '/^ROOTDIR/d' $<
 	$(SED) -i '/^BINDIR/i \
 	ROOTDIR=$(DESTDIR)$(rootdir)' $<

@@ -1,0 +1,17 @@
+beam_opcodes.*
+beam_cold.h
+beam_hot.h
+beam_pred_funcs.h
+beam_tr_funcs.h
+erl_alloc_types.h
+erl_atom_table.*
+erl_bif_list.h
+erl_bif_table.*
+erl_bif_wrap.c
+erl_compile_flags.h
+erl_pbifs.c
+hipe_amd64_asm.h
+hipe_arm_asm.h
+hipe_ppc_asm.h
+hipe_sparc_asm.h
+hipe_x86_asm.h

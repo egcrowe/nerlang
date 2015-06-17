@@ -1,0 +1,1 @@
+SUBDIRS = erts ethread pcre

@@ -1,0 +1,48 @@
+Build Instructions
+------------------
+If the git source repository has been cloned then your environment must support
+the GNU Build System "Autotools" (GNU Autoconf, GNU Automake and GNU Libtool).
+After cloning the repository generate the configure script and Makefile.ins with
+the following:
+
+    > ./autogen.sh
+
+However if you have fetched and unpacked a distribution tarball you environment
+does not need to support "Autotools" since the configure script and Makefile.ins
+are included in the tarball.
+
+To build use the following command with N set to the number of available CPU
+cores:
+
+    > ./configure
+    > make -s -jN
+
+To run the test suites run the following:
+
+    > make -s check
+
+Installing
+----------
+The default installation root directory is ${prefix}/nerlang where
+${prefix}=/usr/lib. The prefix directory can be set using the --prefix argument
+when running the configure script.
+
+Running
+-------
+To run the eshell:
+
+    > nerl
+
+To compile:
+
+    > nerlc
+
+Distributing
+------------
+A tarball distribution can be made using:
+
+    > make dist
+
+The integrity of a tarball distribution can be tested using:
+
+    > make distcheck
